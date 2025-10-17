@@ -17,6 +17,7 @@
           packages = with pkgs; [ python311 neovim git ] ++
             (with pkgs.python311Packages; [
               pip
+              uv
               venvShellHook
             ]);
           shellHook = ''
