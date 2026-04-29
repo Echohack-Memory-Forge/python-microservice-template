@@ -14,7 +14,7 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           venvDir = ".venv";
-          packages = with pkgs; [ python312 just neovim nushell openapi-generator-cli git ] ++
+          packages = with pkgs; [ python312 just neovim nushell cookiecutter openapi-generator-cli git ] ++
             (with pkgs.python312Packages; [
               pip
               uv
