@@ -14,7 +14,7 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           venvDir = ".venv";
-          packages = with pkgs; [ python311 neovim git ] ++
+          packages = with pkgs; [ python311 neovim openapi-generator-cli git ] ++
             (with pkgs.python311Packages; [
               pip
               uv
