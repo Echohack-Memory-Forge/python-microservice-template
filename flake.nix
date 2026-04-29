@@ -1,7 +1,7 @@
 {
   description = "A Nix-flake-based Python development environment";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
   outputs = { self, nixpkgs }:
     let
@@ -14,8 +14,8 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           venvDir = ".venv";
-          packages = with pkgs; [ python311 neovim nushell openapi-generator-cli git ] ++
-            (with pkgs.python311Packages; [
+          packages = with pkgs; [ python312 just neovim nushell openapi-generator-cli git ] ++
+            (with pkgs.python312Packages; [
               pip
               uv
               venvShellHook
